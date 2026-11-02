@@ -1,0 +1,1 @@
+{"variant":4,"d_model":32,"n_heads":4,"e_layers":2,"patch_len":4,"lags":[0,1,2,3,4,6,9,12],"lag_window":8,"corr_window":16,"gamma_init":0.01,"beta_init":0.0}

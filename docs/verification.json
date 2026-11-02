@@ -1,0 +1,57 @@
+{
+  "synthetic_only": true,
+  "checks": [
+    {
+      "model": "CEEMDAN",
+      "training_and_reload": "passed",
+      "samples": 4,
+      "prediction_shape": [
+        4,
+        5,
+        2
+      ],
+      "parameters": 3047
+    },
+    {
+      "model": "Autoformer",
+      "training_and_reload": "passed",
+      "samples": 4,
+      "prediction_shape": [
+        4,
+        5,
+        2
+      ],
+      "parameters": 5461
+    },
+    {
+      "model": "TimeXer",
+      "training_and_reload": "passed",
+      "samples": 4,
+      "prediction_shape": [
+        4,
+        5,
+        2
+      ],
+      "parameters": 3789
+    },
+    {
+      "model": "DLLTimeXer",
+      "training_and_reload": "passed",
+      "samples": 4,
+      "prediction_shape": [
+        4,
+        5,
+        2
+      ],
+      "parameters": 2265
+    }
+  ],
+  "date": "2026-11-02",
+  "pytest_passed": 66,
+  "dll_full_run": {
+    "epochs": 3,
+    "test_windows": 50,
+    "bounded": false,
+    "purpose": "functional validation only; synthetic data"
+  }
+}

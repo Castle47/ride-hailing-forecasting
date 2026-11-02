@@ -1,0 +1,32 @@
+{
+  "patchtst": {
+    "repository": "https://github.com/yuqinie98/PatchTST",
+    "commit": "204c21efe0b39603ad6e2ca640ef5896646ab1a9",
+    "subdirectory": "PatchTST_supervised"
+  },
+  "timexer": {
+    "repository": "https://github.com/thuml/TimeXer",
+    "reference": "main retrieved 2026-10-22",
+    "model_source_url": "https://cdn.jsdelivr.net/gh/thuml/TimeXer@main/models/TimeXer.py",
+    "model_source_sha256": "b334d7869544d0a5de7a35501d0342d7bd0be4ebda06ccc045855a42819728c0",
+    "embedding_source_url": "https://cdn.jsdelivr.net/gh/thuml/TimeXer@main/layers/Embed.py",
+    "embedding_source_sha256": "17e7c3577324c41a0da427a199c955b782fde905aabb1f7cbc3c4e15ebd4ae35"
+  },
+  "dll_design": {
+    "reference": "基于Transformer框架的网约车供需预测模型演进之路.md，第五章",
+    "read_date": "2026-11-02",
+    "implementation": "models/DLLTimeXer.py",
+    "name": "Dynamic Lead–Lag TimeXer"
+  },
+  "standalone": true,
+  "tslib_dependency": false,
+  "local_sources": {
+    "description": "Curated from the existing project snapshot before TSLib migration",
+    "models": [
+      "CEEMDANPatchTST",
+      "Autoformer",
+      "TimeXer",
+      "PatchTST"
+    ]
+  }
+}
