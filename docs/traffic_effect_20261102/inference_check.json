@@ -1,0 +1,8 @@
+{
+  "shape": [
+    5,
+    4
+  ],
+  "finite": true,
+  "max_abs_difference_to_batch_evaluation": 2.9802322387695312e-08
+}

@@ -93,3 +93,7 @@ python predict.py --checkpoint outputs/dll/best.pt --input data/request.npz --ou
 ## 验证范围
 
 见 [验证记录](docs/VERIFICATION.md) 与机器可读的 `docs/verification.json`。测试和合成数据实验验证计算与工程流程，不宣称业务收益，不代表 DLL 已优于其他模型。尚需真实网约车数据、多随机种子、同输入预算对照，以及场景分组、延迟和外生变量错位/延迟到达实验。
+
+## 真实数据初步效果测试
+
+已完成 Traffic 固定16传感器子集的3随机种子对比，历史48小时预测未来1–5小时。DLL日历版平均MAE较TimeXer低约2.2%，但相同历史输入的DLL版本反而高约3.9%；尚不能确认lag/相关性模块的独立收益。设置、逐步误差及降级风险见 [完整报告](docs/traffic_effect_20261102/REPORT.md)。该结果不代表网约车数据或全862传感器基准。

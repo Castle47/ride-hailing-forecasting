@@ -1,0 +1,46 @@
+{
+  "dataset": "Traffic",
+  "source_csv_sha256": "cb06463d56fa17d87f47027cd9389ceae82a69eddee51cdb61480e120dab0b16",
+  "rows": 17544,
+  "targets": [
+    "0",
+    "1",
+    "2",
+    "3"
+  ],
+  "auxiliary": [
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15"
+  ],
+  "frequency": "hourly",
+  "seq_len": 48,
+  "pred_len": 5,
+  "train_fraction": 0.7,
+  "val_fraction": 0.15,
+  "test_fraction": 0.15,
+  "epochs": 5,
+  "seeds": [
+    2021,
+    2022,
+    2023
+  ],
+  "batch_size": 64,
+  "learning_rate": 0.001,
+  "device": "cpu",
+  "caveats": [
+    "Fixed 16-sensor subset; not full 862-sensor benchmark",
+    "Not ride-hailing data",
+    "Equal epoch/width/depth budget, not matched parameter counts",
+    "Calendar is additional information available only to DLL_V4_calendar"
+  ]
+}
