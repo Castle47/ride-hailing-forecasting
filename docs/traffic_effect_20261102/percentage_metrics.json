@@ -1,0 +1,1966 @@
+{
+  "protocol": {
+    "retrained": false,
+    "checkpoint_reselected": false,
+    "original_unit_metrics": true,
+    "mape": "100 * mean(abs(pred-true)/abs(true)); excludes abs(true)<=epsilon; equal-weight mean across targets",
+    "wmape_pooled": "100 * sum(abs(pred-true)) / sum(abs(true)); includes zero-target error in numerator",
+    "wmape_macro": "Equal-weight average of per-target WMAPE",
+    "epsilon_rule": "max(1e-8, 1e-6 * training mean absolute target), original units, same mask for every model",
+    "epsilon": [
+      4.8332719926156194e-08,
+      4.62209609430909e-08,
+      1.0444883554143805e-07,
+      5.6513159672831297e-08
+    ],
+    "test_windows": 2628,
+    "horizon": 5,
+    "targets": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ],
+    "excluded_per_target": [
+      5,
+      205,
+      10,
+      210
+    ],
+    "observations_per_target": 13140,
+    "target_min": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "target_median": [
+      0.04675000160932541,
+      0.03514999896287918,
+      0.08055000007152557,
+      0.05770000070333481
+    ]
+  },
+  "summary": {
+    "PatchTST": {
+      "mape_macro_percent": {
+        "mean": 42.93069129178149,
+        "std": 2.2130412382218108
+      },
+      "wmape_pooled_percent": {
+        "mean": 30.829308791631394,
+        "std": 0.47525429047334133
+      },
+      "wmape_macro_percent": {
+        "mean": 30.59263375947302,
+        "std": 0.4993371723534483
+      }
+    },
+    "TimeXer": {
+      "mape_macro_percent": {
+        "mean": 41.216840759255724,
+        "std": 2.5002598626534707
+      },
+      "wmape_pooled_percent": {
+        "mean": 29.79985806375133,
+        "std": 0.36222513685605484
+      },
+      "wmape_macro_percent": {
+        "mean": 29.813588760513085,
+        "std": 0.4296917507337858
+      }
+    },
+    "DLL_V3_history": {
+      "mape_macro_percent": {
+        "mean": 43.679124736041224,
+        "std": 2.52890110914592
+      },
+      "wmape_pooled_percent": {
+        "mean": 30.97419319042562,
+        "std": 0.559302761791401
+      },
+      "wmape_macro_percent": {
+        "mean": 30.766149237165802,
+        "std": 0.5862069351305214
+      }
+    },
+    "DLL_V4_calendar": {
+      "mape_macro_percent": {
+        "mean": 40.48158393460107,
+        "std": 2.156254646898843
+      },
+      "wmape_pooled_percent": {
+        "mean": 29.143280147699382,
+        "std": 0.5168345901376301
+      },
+      "wmape_macro_percent": {
+        "mean": 28.852264638497502,
+        "std": 0.6286028511540142
+      }
+    }
+  },
+  "baselines": {
+    "Persistence": {
+      "mape_macro_percent": 89.7546359293681,
+      "wmape_macro_percent": 62.68608650568577,
+      "wmape_pooled_percent": 61.17802381338009,
+      "per_target_mape_percent": [
+        115.04790040260013,
+        77.03307524884177,
+        89.9777648972814,
+        76.9598031687491
+      ],
+      "per_target_wmape_percent": [
+        78.38054409633192,
+        63.61264083233752,
+        55.5977260751956,
+        53.153435018878035
+      ],
+      "excluded_per_target": [
+        5,
+        205,
+        10,
+        210
+      ],
+      "observations_per_target": 13140
+    },
+    "DailySeasonal": {
+      "mape_macro_percent": 35.27588240772689,
+      "wmape_macro_percent": 33.03208356591764,
+      "wmape_pooled_percent": 33.49145390692065,
+      "per_target_mape_percent": [
+        39.16597659336601,
+        33.05538231149385,
+        38.65185755863861,
+        30.23031316740908
+      ],
+      "per_target_wmape_percent": [
+        33.77975447446284,
+        32.77565345670232,
+        35.43396955604907,
+        30.138956776456318
+      ],
+      "excluded_per_target": [
+        5,
+        205,
+        10,
+        210
+      ],
+      "observations_per_target": 13140
+    }
+  },
+  "runs": [
+    {
+      "model": "PatchTST",
+      "seed": 2021,
+      "metrics": {
+        "mape_macro_percent": 45.413222322851254,
+        "wmape_macro_percent": 30.998214286575728,
+        "wmape_pooled_percent": 31.22146361777261,
+        "per_target_mape_percent": [
+          67.63093217484585,
+          34.266712398033974,
+          48.914294277017476,
+          30.840950441507726
+        ],
+        "per_target_wmape_percent": [
+          37.07577214441281,
+          28.570536473788174,
+          31.793389659441903,
+          26.55315886866003
+        ],
+        "excluded_per_target": [
+          5,
+          205,
+          10,
+          210
+        ],
+        "observations_per_target": 13140
+      },
+      "per_horizon": [
+        {
+          "mape_macro_percent": 32.649790531315666,
+          "wmape_macro_percent": 22.773474481605888,
+          "wmape_pooled_percent": 22.800810272150805,
+          "per_target_mape_percent": [
+            48.125649754126734,
+            25.724443941109413,
+            32.473145550598446,
+            24.275922879428073
+          ],
+          "per_target_wmape_percent": [
+            25.595158959749817,
+            21.86291089158698,
+            22.797066554520423,
+            20.83876152056633
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 42.97217874466151,
+          "wmape_macro_percent": 29.801399432809475,
+          "wmape_pooled_percent": 30.008501398880902,
+          "per_target_mape_percent": [
+            66.28360883393322,
+            29.875275349081555,
+            44.44790311850011,
+            31.281927677131154
+          ],
+          "per_target_wmape_percent": [
+            36.327269429381964,
+            26.386389678709058,
+            30.26608507933505,
+            26.22585354381184
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 51.387625855036845,
+          "wmape_macro_percent": 33.34776525898957,
+          "wmape_pooled_percent": 33.51276714775448,
+          "per_target_mape_percent": [
+            81.0221134442428,
+            36.988139146252486,
+            54.50513492597949,
+            33.035115903672605
+          ],
+          "per_target_wmape_percent": [
+            41.8271005006369,
+            30.002979148251654,
+            33.68844374049025,
+            27.87253764657948
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 52.67951064740106,
+          "wmape_macro_percent": 34.70415667665356,
+          "wmape_pooled_percent": 34.90848161788863,
+          "per_target_mape_percent": [
+            81.73078792178454,
+            40.38235896750581,
+            55.335212686018174,
+            33.2696830142957
+          ],
+          "per_target_wmape_percent": [
+            42.34966636416725,
+            32.23024395791994,
+            35.45203010932531,
+            28.784686275201743
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 47.37700583584122,
+          "wmape_macro_percent": 34.3807622525705,
+          "wmape_pooled_percent": 34.89286392862436,
+          "per_target_mape_percent": [
+            60.99250092014199,
+            38.36334458622061,
+            57.81007510399117,
+            32.342102733011075
+          ],
+          "per_target_wmape_percent": [
+            39.29194277964437,
+            32.401788513827185,
+            36.77960997098395,
+            29.04970774582647
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        }
+      ],
+      "prediction_sha256": "4c5d00e0a1ef7ee4639b9600ebf9b3f3cb0a544b6a3952433af02b91513ba5b2"
+    },
+    {
+      "model": "PatchTST",
+      "seed": 2022,
+      "metrics": {
+        "mape_macro_percent": 42.21414597016149,
+        "wmape_macro_percent": 30.744760301272244,
+        "wmape_pooled_percent": 30.965688270298543,
+        "per_target_mape_percent": [
+          59.24354301685243,
+          33.90257677769415,
+          45.77190214070506,
+          29.938561945394333
+        ],
+        "per_target_wmape_percent": [
+          35.6065287080228,
+          29.315250465356186,
+          31.742669436881272,
+          26.314592594828728
+        ],
+        "excluded_per_target": [
+          5,
+          205,
+          10,
+          210
+        ],
+        "observations_per_target": 13140
+      },
+      "per_horizon": [
+        {
+          "mape_macro_percent": 30.602976869834418,
+          "wmape_macro_percent": 23.415817351696116,
+          "wmape_pooled_percent": 23.401189306497365,
+          "per_target_mape_percent": [
+            45.86091722521117,
+            25.80492870064975,
+            29.131479678444716,
+            21.614581875032027
+          ],
+          "per_target_wmape_percent": [
+            26.694475675540158,
+            22.828095442093517,
+            23.321702743698076,
+            20.818995545452726
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 40.85117024989289,
+          "wmape_macro_percent": 29.56109941931719,
+          "wmape_pooled_percent": 29.686382878368374,
+          "per_target_mape_percent": [
+            64.15784334183601,
+            30.680943153259367,
+            40.3637262175146,
+            28.20216828696158
+          ],
+          "per_target_wmape_percent": [
+            35.35448476103568,
+            27.68511835332452,
+            29.97146176806094,
+            25.233332794847623
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 45.69980332641187,
+          "wmape_macro_percent": 32.8065536704748,
+          "wmape_pooled_percent": 32.84603520833329,
+          "per_target_mape_percent": [
+            69.22559632573355,
+            35.26788983323897,
+            46.21221050142404,
+            32.09351664525092
+          ],
+          "per_target_wmape_percent": [
+            38.95175808789628,
+            31.55090436219517,
+            32.94154721401165,
+            27.782005017796102
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 44.77951677572203,
+          "wmape_macro_percent": 33.58691063329477,
+          "wmape_pooled_percent": 33.90086640586632,
+          "per_target_mape_percent": [
+            63.273241932764044,
+            33.74432819026056,
+            50.586164557748724,
+            31.514332422114776
+          ],
+          "per_target_wmape_percent": [
+            39.23111036010818,
+            31.650970348338184,
+            34.975847506885785,
+            28.489714317846936
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 49.13726262894627,
+          "wmape_macro_percent": 34.36875419929024,
+          "wmape_pooled_percent": 35.008863621036355,
+          "per_target_mape_percent": [
+            53.70011625871736,
+            44.01479401106211,
+            62.565929748393245,
+            36.26821049761235
+          ],
+          "per_target_wmape_percent": [
+            37.81043101060609,
+            32.89079028834622,
+            37.5189758190493,
+            29.254819679159343
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        }
+      ],
+      "prediction_sha256": "4a9468524a6272d303674cdc24e542862b2ea40d20226f9eff99f1d1848f5c58"
+    },
+    {
+      "model": "PatchTST",
+      "seed": 2023,
+      "metrics": {
+        "mape_macro_percent": 41.16470558233171,
+        "wmape_macro_percent": 30.034926690571098,
+        "wmape_pooled_percent": 30.300774486823023,
+        "per_target_mape_percent": [
+          57.14252596451964,
+          31.979230798751097,
+          45.98580996456315,
+          29.551255601492965
+        ],
+        "per_target_wmape_percent": [
+          34.979739813364695,
+          27.853507797845626,
+          31.073771179504966,
+          26.23268797156911
+        ],
+        "excluded_per_target": [
+          5,
+          205,
+          10,
+          210
+        ],
+        "observations_per_target": 13140
+      },
+      "per_horizon": [
+        {
+          "mape_macro_percent": 29.034042788723408,
+          "wmape_macro_percent": 22.613954328892518,
+          "wmape_pooled_percent": 22.55812873585795,
+          "per_target_mape_percent": [
+            40.97471222109894,
+            24.8633020663686,
+            27.435627711990264,
+            22.862529155435823
+          ],
+          "per_target_wmape_percent": [
+            25.350184537164424,
+            22.134006000434834,
+            22.30670354837734,
+            20.664923229593466
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 42.49982691310367,
+          "wmape_macro_percent": 29.594717049639687,
+          "wmape_pooled_percent": 29.775624319737577,
+          "per_target_mape_percent": [
+            65.24191337548254,
+            31.63445132119835,
+            43.48579800298363,
+            29.637144952750162
+          ],
+          "per_target_wmape_percent": [
+            35.69870521787571,
+            26.949444011625076,
+            30.108001382371757,
+            25.62271758668621
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 46.434181378193216,
+          "wmape_macro_percent": 31.797412272668886,
+          "wmape_pooled_percent": 32.18149486697445,
+          "per_target_mape_percent": [
+            69.21032014717927,
+            31.9584579802969,
+            51.84266432358734,
+            32.725283061709334
+          ],
+          "per_target_wmape_percent": [
+            37.83689404288824,
+            28.47988981885171,
+            33.20421640939338,
+            27.668648819542216
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 43.84176635912729,
+          "wmape_macro_percent": 32.85064476534397,
+          "wmape_pooled_percent": 33.268945857370085,
+          "per_target_mape_percent": [
+            53.844124033651475,
+            36.21784142455374,
+            53.82473902671493,
+            31.48036095158902
+          ],
+          "per_target_wmape_percent": [
+            37.809887742652464,
+            30.270815247457936,
+            34.591672549812984,
+            28.730203521452495
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 44.01371047251099,
+          "wmape_macro_percent": 33.33211975043541,
+          "wmape_pooled_percent": 33.73408528036944,
+          "per_target_mape_percent": [
+            56.44156004518599,
+            35.22210120133787,
+            53.34022075753961,
+            31.05095988598045
+          ],
+          "per_target_wmape_percent": [
+            38.21341424761785,
+            31.45922968810597,
+            35.1732454465698,
+            28.482589619448035
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        }
+      ],
+      "prediction_sha256": "ed47d2fdbc9f1e4a77f1c4cee9b18320abb1245c4ac5c581dd3a7303cd790883"
+    },
+    {
+      "model": "TimeXer",
+      "seed": 2021,
+      "metrics": {
+        "mape_macro_percent": 44.054822636454055,
+        "wmape_macro_percent": 30.303829551328914,
+        "wmape_pooled_percent": 30.20708729782303,
+        "per_target_mape_percent": [
+          63.343609728689664,
+          38.4170158103657,
+          42.96321637676483,
+          31.495448629996055
+        ],
+        "per_target_wmape_percent": [
+          36.15191425799672,
+          29.023150140067063,
+          29.697254967929698,
+          26.34299883932218
+        ],
+        "excluded_per_target": [
+          5,
+          205,
+          10,
+          210
+        ],
+        "observations_per_target": 13140
+      },
+      "per_horizon": [
+        {
+          "mape_macro_percent": 52.90940788188696,
+          "wmape_macro_percent": 27.755447202620743,
+          "wmape_pooled_percent": 27.184930016912407,
+          "per_target_mape_percent": [
+            83.91227410522737,
+            49.39869589246443,
+            46.03841656848857,
+            32.28824496136748
+          ],
+          "per_target_wmape_percent": [
+            33.97455890015094,
+            28.03108173135355,
+            25.064819359646965,
+            23.951328819331522
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 43.37666000661824,
+          "wmape_macro_percent": 29.531011300982108,
+          "wmape_pooled_percent": 29.594974567989837,
+          "per_target_mape_percent": [
+            60.14088743896625,
+            39.671790983400626,
+            43.98239968447504,
+            29.711561919631023
+          ],
+          "per_target_wmape_percent": [
+            35.33479901296624,
+            27.48064250477212,
+            29.56991332605435,
+            25.738690360135724
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 40.814678259589854,
+          "wmape_macro_percent": 30.89122404119029,
+          "wmape_pooled_percent": 30.936063088779754,
+          "per_target_mape_percent": [
+            58.661101513931904,
+            33.6740105668064,
+            41.14505560230463,
+            29.778545355316467
+          ],
+          "per_target_wmape_percent": [
+            37.550382273625345,
+            28.78086714949734,
+            30.847419187151573,
+            26.3862275544869
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 43.793660496775004,
+          "wmape_macro_percent": 31.96949054011273,
+          "wmape_pooled_percent": 31.958868919169586,
+          "per_target_mape_percent": [
+            59.7700940260235,
+            36.56554113979428,
+            44.38402805929941,
+            34.45497876198282
+          ],
+          "per_target_wmape_percent": [
+            37.87650620363918,
+            30.49492347441492,
+            31.769761299613403,
+            27.73677118278342
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 39.379706537400224,
+          "wmape_macro_percent": 31.37679297469103,
+          "wmape_pooled_percent": 31.366516765207106,
+          "per_target_mape_percent": [
+            54.23369155929924,
+            32.77504046936273,
+            39.26618196925647,
+            31.24391215168245
+          ],
+          "per_target_wmape_percent": [
+            36.02567143472663,
+            30.335019897552097,
+            31.24170084006354,
+            27.904779726421836
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        }
+      ],
+      "prediction_sha256": "5c2f1806fe1468639621ca0108d02d8737d1fd7a00902431a90cd14f5790d6c8"
+    },
+    {
+      "model": "TimeXer",
+      "seed": 2022,
+      "metrics": {
+        "mape_macro_percent": 40.25686346894639,
+        "wmape_macro_percent": 29.634672412669282,
+        "wmape_pooled_percent": 29.678889154156455,
+        "per_target_mape_percent": [
+          59.06806410431216,
+          35.0680451093374,
+          38.596878825118196,
+          28.294465837017803
+        ],
+        "per_target_wmape_percent": [
+          35.25489041182176,
+          28.121828952298547,
+          29.704577271844524,
+          25.457393014712288
+        ],
+        "excluded_per_target": [
+          5,
+          205,
+          10,
+          210
+        ],
+        "observations_per_target": 13140
+      },
+      "per_horizon": [
+        {
+          "mape_macro_percent": 32.629192911293174,
+          "wmape_macro_percent": 23.95172718685968,
+          "wmape_pooled_percent": 23.867443842438146,
+          "per_target_mape_percent": [
+            53.390431259132,
+            28.828319530697456,
+            28.077531178573405,
+            20.22048967676982
+          ],
+          "per_target_wmape_percent": [
+            29.517975744942717,
+            22.76310189079838,
+            23.425824050579575,
+            20.10000706111805
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 38.89748870661221,
+          "wmape_macro_percent": 29.551816368801884,
+          "wmape_pooled_percent": 29.583141632600295,
+          "per_target_mape_percent": [
+            62.433166159799335,
+            32.42037207961897,
+            35.41332447536121,
+            25.32309211166931
+          ],
+          "per_target_wmape_percent": [
+            36.38930540233078,
+            27.59599227079187,
+            29.48679717271893,
+            24.73517062936595
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 39.132826145288604,
+          "wmape_macro_percent": 30.107514435890224,
+          "wmape_pooled_percent": 30.197045053385672,
+          "per_target_mape_percent": [
+            55.04494799595295,
+            35.11113932885633,
+            38.06877521413139,
+            28.30644204221376
+          ],
+          "per_target_wmape_percent": [
+            35.30876835236619,
+            28.53378776261526,
+            30.382629517214,
+            26.20487211136545
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 39.930578363037824,
+          "wmape_macro_percent": 30.96098205053204,
+          "wmape_pooled_percent": 31.151401332288934,
+          "per_target_mape_percent": [
+            57.26682610198419,
+            34.31274581195585,
+            39.99259422020887,
+            28.150147318002393
+          ],
+          "per_target_wmape_percent": [
+            36.378963548181986,
+            29.274776903939802,
+            31.751215897230786,
+            26.43897185277558
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 50.694231218500136,
+          "wmape_macro_percent": 33.613280039350194,
+          "wmape_pooled_percent": 33.606656872785024,
+          "per_target_mape_percent": [
+            67.20494900469234,
+            44.667648795558364,
+            51.432169037316136,
+            39.47215803643372
+          ],
+          "per_target_wmape_percent": [
+            38.68618393023348,
+            32.465571289938886,
+            33.48731478936001,
+            29.814050147868397
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        }
+      ],
+      "prediction_sha256": "f65ba2b9cfdb2ac2298dd534847bdc60dba2efaa8e1844b626758ed6f1cf719b"
+    },
+    {
+      "model": "TimeXer",
+      "seed": 2023,
+      "metrics": {
+        "mape_macro_percent": 39.33883617236673,
+        "wmape_macro_percent": 29.502264317541066,
+        "wmape_pooled_percent": 29.513597739274502,
+        "per_target_mape_percent": [
+          56.61608415125984,
+          34.83331742685016,
+          37.97636587541328,
+          27.929577235943636
+        ],
+        "per_target_wmape_percent": [
+          34.49935587401056,
+          28.327571878108223,
+          29.46145273630469,
+          25.72067678174079
+        ],
+        "excluded_per_target": [
+          5,
+          205,
+          10,
+          210
+        ],
+        "observations_per_target": 13140
+      },
+      "per_horizon": [
+        {
+          "mape_macro_percent": 30.292803120835607,
+          "wmape_macro_percent": 22.77945205821957,
+          "wmape_pooled_percent": 22.837380863869242,
+          "per_target_mape_percent": [
+            41.688336884663926,
+            28.67268105273632,
+            29.861958234930945,
+            20.948236311011247
+          ],
+          "per_target_wmape_percent": [
+            25.627739089366578,
+            22.4356149440105,
+            23.116803513107477,
+            19.937650686393717
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 41.4206327014405,
+          "wmape_macro_percent": 29.516429046704143,
+          "wmape_pooled_percent": 29.52335097457853,
+          "per_target_mape_percent": [
+            58.3164637422515,
+            37.723352649048856,
+            40.33338012393969,
+            29.30933429052197
+          ],
+          "per_target_wmape_percent": [
+            35.02625963970212,
+            27.78361644520259,
+            29.324975615140136,
+            25.93086448677172
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 44.365834901200635,
+          "wmape_macro_percent": 31.608679348038287,
+          "wmape_pooled_percent": 31.454177264811065,
+          "per_target_mape_percent": [
+            66.8819392441499,
+            39.5146672360034,
+            40.81424255015529,
+            30.252490574493958
+          ],
+          "per_target_wmape_percent": [
+            37.83119669518267,
+            30.547924408364455,
+            30.769567237239514,
+            27.28602905136651
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 40.95267346312414,
+          "wmape_macro_percent": 31.58055117119412,
+          "wmape_pooled_percent": 31.606645821548835,
+          "per_target_mape_percent": [
+            59.99379164653737,
+            34.76412841032905,
+            39.653205808350414,
+            29.399567987279724
+          ],
+          "per_target_wmape_percent": [
+            36.87620897277191,
+            30.311857196531097,
+            31.60493244245213,
+            27.529206073021342
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 39.662236675232755,
+          "wmape_macro_percent": 32.03882504183721,
+          "wmape_pooled_percent": 32.158270834624346,
+          "per_target_mape_percent": [
+            56.19988923869651,
+            33.49175778613314,
+            39.219042659690096,
+            29.73825701641128
+          ],
+          "per_target_wmape_percent": [
+            37.14472951113582,
+            30.584055304485993,
+            32.50138393777589,
+            27.925131413951107
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        }
+      ],
+      "prediction_sha256": "396b5552e37986a42251ec3fd2fc8cca47ddca36a719c2486eb083af5a03254f"
+    },
+    {
+      "model": "DLL_V3_history",
+      "seed": 2021,
+      "metrics": {
+        "mape_macro_percent": 46.57833325823657,
+        "wmape_macro_percent": 31.426129938944506,
+        "wmape_pooled_percent": 31.599809564696344,
+        "per_target_mape_percent": [
+          64.15376378981713,
+          37.750775666199495,
+          50.34972836513766,
+          34.05906521179199
+        ],
+        "per_target_wmape_percent": [
+          36.964281935894114,
+          29.440965518972458,
+          32.053487132916935,
+          27.245785167994505
+        ],
+        "excluded_per_target": [
+          5,
+          205,
+          10,
+          210
+        ],
+        "observations_per_target": 13140
+      },
+      "per_horizon": [
+        {
+          "mape_macro_percent": 33.41113974494124,
+          "wmape_macro_percent": 23.55413582399333,
+          "wmape_pooled_percent": 23.85584980819181,
+          "per_target_mape_percent": [
+            47.393010043082285,
+            23.91576388208824,
+            39.98357775140357,
+            22.352207303190863
+          ],
+          "per_target_wmape_percent": [
+            26.22607865675882,
+            22.044704772861287,
+            24.868851101633208,
+            21.076908764720006
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 41.224927749007975,
+          "wmape_macro_percent": 30.253402529724134,
+          "wmape_pooled_percent": 30.613585725335593,
+          "per_target_mape_percent": [
+            59.43766422874067,
+            29.933524802044413,
+            46.94041311553088,
+            28.58810884971591
+          ],
+          "per_target_wmape_percent": [
+            36.39198163582592,
+            27.32306936752182,
+            31.64320420529763,
+            25.65535491025116
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 44.02857839305976,
+          "wmape_macro_percent": 32.18038173519502,
+          "wmape_pooled_percent": 32.35055941551124,
+          "per_target_mape_percent": [
+            60.23071568319427,
+            35.987171774561844,
+            46.395241014255504,
+            33.501185100227424
+          ],
+          "per_target_wmape_percent": [
+            38.900530029902356,
+            29.82163878152845,
+            32.73787491421507,
+            27.26148321513421
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 51.44231767536396,
+          "wmape_macro_percent": 34.07970317317653,
+          "wmape_pooled_percent": 34.19530733725674,
+          "per_target_mape_percent": [
+            67.60367971177573,
+            44.78824966677754,
+            53.81689066058465,
+            39.560450662317926
+          ],
+          "per_target_wmape_percent": [
+            39.87125977420525,
+            32.412410186211375,
+            34.493659197250246,
+            29.541483535039237
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 62.784702728809904,
+          "wmape_macro_percent": 37.080309228656745,
+          "wmape_pooled_percent": 36.99947427492123,
+          "per_target_mape_percent": [
+            86.10374928229268,
+            54.129168205525446,
+            64.61251928391368,
+            46.29337414350779
+          ],
+          "per_target_wmape_percent": [
+            43.445016865449524,
+            35.63837023745675,
+            36.53656731793623,
+            32.70128249378449
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        }
+      ],
+      "prediction_sha256": "6eb7497418d3dc2e0cd5565b60aa6d64e15841655ee69e3c74a4fd9702ffc306"
+    },
+    {
+      "model": "DLL_V3_history",
+      "seed": 2022,
+      "metrics": {
+        "mape_macro_percent": 42.53165170216428,
+        "wmape_macro_percent": 30.305937245391053,
+        "wmape_pooled_percent": 30.522558876315703,
+        "per_target_mape_percent": [
+          62.57617166201159,
+          32.752927021541545,
+          45.23326060259841,
+          29.56424752250557
+        ],
+        "per_target_wmape_percent": [
+          36.179930136808366,
+          27.979179990670243,
+          31.08423334062748,
+          25.980405513458123
+        ],
+        "excluded_per_target": [
+          5,
+          205,
+          10,
+          210
+        ],
+        "observations_per_target": 13140
+      },
+      "per_horizon": [
+        {
+          "mape_macro_percent": 32.74976477771497,
+          "wmape_macro_percent": 23.142526037556813,
+          "wmape_pooled_percent": 23.328255612847855,
+          "per_target_mape_percent": [
+            46.31887954321155,
+            25.067498455755178,
+            35.274193394053995,
+            24.33848771783915
+          ],
+          "per_target_wmape_percent": [
+            26.116916548130888,
+            21.742981717344012,
+            23.88364151618471,
+            20.826564368567638
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 43.51031740758708,
+          "wmape_macro_percent": 30.246056846868782,
+          "wmape_pooled_percent": 30.55840508811559,
+          "per_target_mape_percent": [
+            64.4702894749493,
+            33.37670895931658,
+            46.60141796449183,
+            29.5928532315906
+          ],
+          "per_target_wmape_percent": [
+            36.749555795862875,
+            27.206799276116598,
+            31.368514056676954,
+            25.659358258818706
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 46.27116976955246,
+          "wmape_macro_percent": 32.33390715739043,
+          "wmape_pooled_percent": 32.58110698547979,
+          "per_target_mape_percent": [
+            69.62103123013502,
+            35.09962310502894,
+            50.41475624315146,
+            29.94926849989441
+          ],
+          "per_target_wmape_percent": [
+            39.37615585815301,
+            29.710423452237862,
+            33.24298766951912,
+            27.006061649651723
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 46.44122533823518,
+          "wmape_macro_percent": 33.14374509432753,
+          "wmape_pooled_percent": 33.307813333463514,
+          "per_target_mape_percent": [
+            70.98039726345941,
+            35.34375158979245,
+            47.74022731643719,
+            31.70052518325168
+          ],
+          "per_target_wmape_percent": [
+            40.00791371734365,
+            30.652655504683572,
+            33.6398410872682,
+            28.274570068014704
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 43.68578121773172,
+          "wmape_macro_percent": 32.676872610864336,
+          "wmape_pooled_percent": 32.84981340958938,
+          "per_target_mape_percent": [
+            61.490260798302685,
+            34.87705299781461,
+            46.135708094857605,
+            32.240102979952006
+          ],
+          "per_target_wmape_percent": [
+            38.65970626665268,
+            30.610244229493112,
+            33.296856789591374,
+            28.14068315772019
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        }
+      ],
+      "prediction_sha256": "b1a09d0ffbcd0c7fc2c214d7aeb8322dfaf42d8538eea8f4b4e3896803e1de74"
+    },
+    {
+      "model": "DLL_V3_history",
+      "seed": 2023,
+      "metrics": {
+        "mape_macro_percent": 41.927389247722836,
+        "wmape_macro_percent": 30.56638052716184,
+        "wmape_pooled_percent": 30.80021113026482,
+        "per_target_mape_percent": [
+          60.80086903236287,
+          30.892447570193166,
+          45.7957249304494,
+          30.22051545788591
+        ],
+        "per_target_wmape_percent": [
+          36.34425757341373,
+          28.11098193853507,
+          31.397531517819942,
+          26.412751078878614
+        ],
+        "excluded_per_target": [
+          5,
+          205,
+          10,
+          210
+        ],
+        "observations_per_target": 13140
+      },
+      "per_horizon": [
+        {
+          "mape_macro_percent": 33.97535336865698,
+          "wmape_macro_percent": 23.343331402253295,
+          "wmape_pooled_percent": 23.60500670369877,
+          "per_target_mape_percent": [
+            45.24457182300864,
+            25.57329546707818,
+            40.044193037308276,
+            25.039353147232834
+          ],
+          "per_target_wmape_percent": [
+            25.3201104333708,
+            22.04316940863291,
+            24.47147923338625,
+            21.53856653362322
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 43.31984254275373,
+          "wmape_macro_percent": 30.45028081893707,
+          "wmape_pooled_percent": 30.832446960190317,
+          "per_target_mape_percent": [
+            64.04325294893954,
+            31.60495721387741,
+            47.370426705786606,
+            30.260733302411385
+          ],
+          "per_target_wmape_percent": [
+            36.7652966941719,
+            27.049491230232906,
+            31.838604253717797,
+            26.14773109762568
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 41.17513071032066,
+          "wmape_macro_percent": 31.80882406207546,
+          "wmape_pooled_percent": 32.11105697091508,
+          "per_target_mape_percent": [
+            59.49779239779244,
+            28.982678887515263,
+            45.87837033609959,
+            30.341681219875333
+          ],
+          "per_target_wmape_percent": [
+            38.52362844839847,
+            28.776405808822695,
+            32.886413837051684,
+            27.048848154028974
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 46.49145499901991,
+          "wmape_macro_percent": 33.969420021503005,
+          "wmape_pooled_percent": 34.121805672590185,
+          "per_target_mape_percent": [
+            71.8807845026246,
+            32.970111185588316,
+            49.59425807622087,
+            31.52066623164585
+          ],
+          "per_target_wmape_percent": [
+            41.62378739205004,
+            31.334173213006505,
+            34.3985507600894,
+            28.52116872086609
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 44.675164617862904,
+          "wmape_macro_percent": 33.273792130794845,
+          "wmape_pooled_percent": 33.343659073861915,
+          "per_target_mape_percent": [
+            63.33794348944915,
+            35.33119509690669,
+            46.091376496831636,
+            33.94014338826415
+          ],
+          "per_target_wmape_percent": [
+            39.50063310103191,
+            31.3790717659108,
+            33.40296205699767,
+            28.812501599238992
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        }
+      ],
+      "prediction_sha256": "2e459f4e60260f2f75168f0a81b105b6c2fcd49a4bebe7f242158aaa9edbb67a"
+    },
+    {
+      "model": "DLL_V4_calendar",
+      "seed": 2021,
+      "metrics": {
+        "mape_macro_percent": 39.16392642363929,
+        "wmape_macro_percent": 28.44391022106516,
+        "wmape_pooled_percent": 28.773289322931216,
+        "per_target_mape_percent": [
+          56.07946501844907,
+          29.704773796370425,
+          42.8178333450246,
+          28.05363353471304
+        ],
+        "per_target_wmape_percent": [
+          32.96049736949797,
+          25.84228658949691,
+          29.68938071676241,
+          25.28347620850334
+        ],
+        "excluded_per_target": [
+          5,
+          205,
+          10,
+          210
+        ],
+        "observations_per_target": 13140
+      },
+      "per_horizon": [
+        {
+          "mape_macro_percent": 34.70996668462273,
+          "wmape_macro_percent": 24.23207251163676,
+          "wmape_pooled_percent": 24.33438602220036,
+          "per_target_mape_percent": [
+            50.8159634563256,
+            26.516934544183446,
+            37.210515410107746,
+            24.296453327874104
+          ],
+          "per_target_wmape_percent": [
+            28.101618369209458,
+            22.702332794433325,
+            24.53398278992716,
+            21.590356092977093
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 38.134878007508924,
+          "wmape_macro_percent": 28.00997973143942,
+          "wmape_pooled_percent": 28.506206596466974,
+          "per_target_mape_percent": [
+            57.361925911439,
+            26.270728417997468,
+            43.25829531800221,
+            25.648562382597028
+          ],
+          "per_target_wmape_percent": [
+            32.85333891770793,
+            24.654168913382076,
+            29.952832994420472,
+            24.579578100247193
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 38.530735752224224,
+          "wmape_macro_percent": 29.0506990504775,
+          "wmape_pooled_percent": 29.529799313837735,
+          "per_target_mape_percent": [
+            54.656279806724015,
+            28.305004194740086,
+            42.97195125834981,
+            28.189707749083
+          ],
+          "per_target_wmape_percent": [
+            33.54593281330816,
+            25.853700291718706,
+            30.92830744278448,
+            25.87485565409865
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 41.559378472283754,
+          "wmape_macro_percent": 30.061595369291013,
+          "wmape_pooled_percent": 30.435258982273943,
+          "per_target_mape_percent": [
+            57.71605432988641,
+            32.984809523791895,
+            44.50886008944249,
+            31.027789946014213
+          ],
+          "per_target_wmape_percent": [
+            34.15544510851076,
+            27.44414634131056,
+            31.518504637839357,
+            27.128285389503368
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 42.88467320155678,
+          "wmape_macro_percent": 30.873582161038634,
+          "wmape_pooled_percent": 31.069227373018837,
+          "per_target_mape_percent": [
+            59.8471015878703,
+            34.44639230113925,
+            46.139544649220745,
+            31.105654267996847
+          ],
+          "per_target_wmape_percent": [
+            36.15232439197012,
+            28.572586040436057,
+            31.521076656557636,
+            27.248341555190716
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        }
+      ],
+      "prediction_sha256": "a39634e4d73414fdff3f4af80645123b3599ae491415caa78d5c39a5d23766da"
+    },
+    {
+      "model": "DLL_V4_calendar",
+      "seed": 2022,
+      "metrics": {
+        "mape_macro_percent": 42.96996676556794,
+        "wmape_macro_percent": 29.57613074145866,
+        "wmape_pooled_percent": 29.733797551784605,
+        "per_target_mape_percent": [
+          64.16634016309727,
+          32.7071108523655,
+          43.060754935985344,
+          31.945661110823632
+        ],
+        "per_target_wmape_percent": [
+          35.052758689288716,
+          27.035138897807514,
+          29.967229259540748,
+          26.24939611919765
+        ],
+        "excluded_per_target": [
+          5,
+          205,
+          10,
+          210
+        ],
+        "observations_per_target": 13140
+      },
+      "per_horizon": [
+        {
+          "mape_macro_percent": 37.29112368430729,
+          "wmape_macro_percent": 24.130264756059184,
+          "wmape_pooled_percent": 24.224445186397915,
+          "per_target_mape_percent": [
+            58.6392838319029,
+            26.59272821646575,
+            35.54956941008371,
+            28.38291327877679
+          ],
+          "per_target_wmape_percent": [
+            28.36164806746922,
+            21.64551340122618,
+            24.151185154601485,
+            22.362712400939838
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 42.63474023677769,
+          "wmape_macro_percent": 28.836942077225892,
+          "wmape_pooled_percent": 29.20511267662369,
+          "per_target_mape_percent": [
+            67.09982334952163,
+            28.417624456167566,
+            44.012191252307716,
+            31.009321889113846
+          ],
+          "per_target_wmape_percent": [
+            34.89369206506007,
+            25.16145472376784,
+            30.06666974360393,
+            25.22595177647173
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 45.96293310683873,
+          "wmape_macro_percent": 31.334694368158367,
+          "wmape_pooled_percent": 31.47856916746777,
+          "per_target_mape_percent": [
+            68.65412743691994,
+            35.55091913157963,
+            46.487655012935285,
+            33.159030845920086
+          ],
+          "per_target_wmape_percent": [
+            37.5629530208213,
+            28.867523029916125,
+            31.702524592665597,
+            27.205776829230448
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 42.415942903613775,
+          "wmape_macro_percent": 30.985211203656185,
+          "wmape_pooled_percent": 31.13615873774906,
+          "per_target_mape_percent": [
+            59.935497023122345,
+            34.04986499569127,
+            43.8585572118402,
+            31.81985238380128
+          ],
+          "per_target_wmape_percent": [
+            35.93304319867435,
+            28.899535480531686,
+            31.43854619474432,
+            27.669719940674387
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 46.54509389630219,
+          "wmape_macro_percent": 32.60521708611837,
+          "wmape_pooled_percent": 32.63507233450858,
+          "per_target_mape_percent": [
+            66.50296917401948,
+            38.92441746192332,
+            45.39580179275979,
+            35.357187156506164
+          ],
+          "per_target_wmape_percent": [
+            38.52024870997355,
+            30.627224108035108,
+            32.48618179829846,
+            28.787213728166375
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        }
+      ],
+      "prediction_sha256": "c911c0d265b11351cc7bdbcc271bf227b4d1d6c612e2a9c431db3dcb5bc11505"
+    },
+    {
+      "model": "DLL_V4_calendar",
+      "seed": 2023,
+      "metrics": {
+        "mape_macro_percent": 39.31085861459598,
+        "wmape_macro_percent": 28.53675295296869,
+        "wmape_pooled_percent": 28.922753568382316,
+        "per_target_mape_percent": [
+          58.76210554605288,
+          29.5200293840303,
+          41.32401228253189,
+          27.637287245768842
+        ],
+        "per_target_wmape_percent": [
+          33.40597649508483,
+          25.86327849888417,
+          30.07862645825583,
+          24.79913035964993
+        ],
+        "excluded_per_target": [
+          5,
+          205,
+          10,
+          210
+        ],
+        "observations_per_target": 13140
+      },
+      "per_horizon": [
+        {
+          "mape_macro_percent": 33.225091934143386,
+          "wmape_macro_percent": 23.20994216457571,
+          "wmape_pooled_percent": 23.35464142366551,
+          "per_target_mape_percent": [
+            49.197892723140605,
+            25.681057774028186,
+            32.997707309215905,
+            25.023709930188847
+          ],
+          "per_target_wmape_percent": [
+            26.358486697566228,
+            21.62430753823494,
+            23.691352502490343,
+            21.165621920011333
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 40.518507510907355,
+          "wmape_macro_percent": 28.68996867255948,
+          "wmape_pooled_percent": 28.99685512007607,
+          "per_target_mape_percent": [
+            63.296135015408936,
+            28.79635499180954,
+            41.990815623525336,
+            27.99072441288561
+          ],
+          "per_target_wmape_percent": [
+            34.858226344560826,
+            25.58693022366113,
+            29.7521486532367,
+            24.562569468779262
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 39.680534542878114,
+          "wmape_macro_percent": 29.382315386852962,
+          "wmape_pooled_percent": 29.85565684745839,
+          "per_target_mape_percent": [
+            61.15131966065317,
+            28.770702342741256,
+            43.69332050093227,
+            25.106795667185754
+          ],
+          "per_target_wmape_percent": [
+            34.73415269727335,
+            26.577984919497034,
+            31.371166263917438,
+            24.84595766672403
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 40.730216430283335,
+          "wmape_macro_percent": 29.9719018777503,
+          "wmape_pooled_percent": 30.615738673145458,
+          "per_target_mape_percent": [
+            59.48419168040056,
+            29.963843122983665,
+            44.240029477498766,
+            29.232801440250338
+          ],
+          "per_target_wmape_percent": [
+            34.83917584832956,
+            26.45241682699647,
+            32.654581761168984,
+            25.941433074506197
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        },
+        {
+          "mape_macro_percent": 42.399942654767706,
+          "wmape_macro_percent": 31.439859088506168,
+          "wmape_pooled_percent": 31.801113603746067,
+          "per_target_mape_percent": [
+            60.68098865066113,
+            34.38818868858884,
+            43.69818850148718,
+            30.83240477833367
+          ],
+          "per_target_wmape_percent": [
+            36.247348557850536,
+            29.093438117791184,
+            32.93450317534333,
+            27.48414650303963
+          ],
+          "excluded_per_target": [
+            1,
+            41,
+            2,
+            42
+          ],
+          "observations_per_target": 2628
+        }
+      ],
+      "prediction_sha256": "8dc573f3d86d522518cecd011a09db70ff63e9d8ce20eb4856c92fd46b975c02"
+    }
+  ]
+}

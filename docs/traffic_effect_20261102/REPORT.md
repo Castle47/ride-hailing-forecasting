@@ -65,3 +65,7 @@ python scripts/report_traffic.py --results outputs/traffic_effect_20261102
 ```
 
 源码和精简报告提交仓库；数据、权重和完整日志保留本地。`summary.json`、`protocol.json` 和 `runs.json` 包含实际记录，可追溯每个seed及验证选中的epoch。
+
+## MAPE / WMAPE 补充
+
+复用固定预测补算百分比误差，未重新训练或选模。DLL日历版 MAPE 40.48%、总体WMAPE 29.14%；TimeXer分别41.22%、29.80%。日历版略优于TimeXer，但MAPE仍高于重复昨日值的35.28%。完整计算口径、零值覆盖和各seed结果见 [百分比指标报告](PERCENTAGE_METRICS.md)。
